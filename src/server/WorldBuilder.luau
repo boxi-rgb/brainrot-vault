@@ -122,7 +122,7 @@ function WorldBuilder.build()
 		dome.Position = Vector3.new(center.X, 6, center.Z)
 		dome.Transparency = 0.65
 		dome.CanCollide = false
-		dome.Visible = false
+		dome.Transparency = 1
 
 		-- Lock pad on the lane side of the plot.
 		local lockPad = part("LockPad", Vector3.new(5, 0.7, 5), Color3.fromRGB(255, 215, 70), plot)

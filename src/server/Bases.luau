@@ -280,10 +280,10 @@ function Bases.tryLock(player)
 	end
 	base.lockedUntil = now + Config.LockSeconds
 	base.lockReadyAt = now + Config.LockSeconds + Config.LockCooldown
-	base.doorDome.Visible = true
+	base.doorDome.Transparency = 0.65
 	banner(player, "Vault locked for " .. Config.LockSeconds .. "s!")
 	task.delay(Config.LockSeconds, function()
-		base.doorDome.Visible = false
+		base.doorDome.Transparency = 1
 	end)
 end
 
@@ -336,7 +336,7 @@ function Bases.releaseBase(player)
 	if prompt then
 		prompt:Destroy()
 	end
-	base.doorDome.Visible = false
+	base.doorDome.Transparency = 1
 	base.lockedUntil = 0
 	base.lockReadyAt = 0
 	base.owner = nil
